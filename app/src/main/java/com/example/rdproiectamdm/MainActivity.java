@@ -1,18 +1,14 @@
 package com.example.rdproiectamdm;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
-
+import java.util.Random;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -25,13 +21,5 @@ public class MainActivity extends AppCompatActivity
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavController navController = Navigation.findNavController(this, R.id.fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
-
-        FetchData();
-    }
-
-    private void FetchData()
-    {
-        // ToDo
     }
 }
-
