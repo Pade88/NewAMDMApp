@@ -11,7 +11,7 @@
             android:id="@+id/textView0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="Cele mai frecvente simptome:" />
 
         <CheckBox
             android:id="@+id/checkBox1"
@@ -19,13 +19,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="20dp"
-            android:text="CheckBox" />
+            android:text="Febră" />
 
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:text="Oboseală"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="5dp"/>
 
@@ -33,22 +33,22 @@
             android:id="@+id/checkBox3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:text="Tuse seacă" />
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Simptome grave:"
             android:layout_marginTop="10dp"/>
 
         <CheckBox
             android:id="@+id/checkBox4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:text="Dificultăți de respirație sau dispnee"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="20dp"/>
 
@@ -56,7 +56,7 @@
             android:id="@+id/checkBox5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:text="Durere sau presiune toracică"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="5dp"/>
 
@@ -64,7 +64,15 @@
             android:id="@+id/checkBox6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:text="Incapacitatea de a vorbi sau de a se mișca."
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rinoree"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="5dp"/>
 
@@ -72,41 +80,57 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Simptome mai puțin frecvente:"
             android:layout_marginTop="10dp"/>
-
-        <CheckBox
-            android:id="@+id/checkBox7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="20dp"/>
 
         <CheckBox
             android:id="@+id/checkBox8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:text="Dureri de cap și dureri musculare"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="20dp"/>
 
         <CheckBox
             android:id="@+id/checkBox9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:text="Durere în gât"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pierderea gustului sau a mirosului"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Conjunctivită"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="O iritație la nivelul pielii sau o decolorare a degetelor de la mâini sau de la picioare"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="5dp"/>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonCheck"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Verifica" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textViewDiag"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:textAlignment="center"

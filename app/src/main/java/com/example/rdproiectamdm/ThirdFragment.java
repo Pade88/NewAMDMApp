@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +22,9 @@ public class ThirdFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    CheckBox check1, check2, check3, check4, check5, check6, check7, check8, check9, check10, check11, check12;
+    Button CheckButton;
+    TextView Diag;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -55,10 +61,56 @@ public class ThirdFragment extends Fragment {
         }
     }
 
+    public String BoxesStatus()
+    {
+        if(check1.isChecked() | check2.isChecked() | check3.isChecked())
+        {
+            return "Aveti cele mai frecvente simptome, trebuie sa consultati un medic!";
+        }
+        else if(check4.isChecked() | check5.isChecked() | check6.isChecked() | check7.isChecked())
+        {
+            return "Trebuie sa vizitati un doctor de urgenta!";
+        }
+        else if(check8.isChecked() | check9.isChecked() | check10.isChecked() | check11.isChecked() | check12.isChecked())
+        {
+            return "Nu trebuie sa va ingrijorati, simptomele dumneavoastra nu sunt grave!";
+        }
+        else
+            return "Selectati cel putin 1 simptom!";
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_third, container, false);
+        CheckButton = rootView.findViewById(R.id.buttonCheck);
+        Diag = rootView.findViewById(R.id.textViewDiag);
+
+        check1 = rootView.findViewById(R.id.checkBox1);
+        check2 = rootView.findViewById(R.id.checkBox2);
+        check3 = rootView.findViewById(R.id.checkBox3);
+        check4 = rootView.findViewById(R.id.checkBox4);
+        check5 = rootView.findViewById(R.id.checkBox5);
+        check6 = rootView.findViewById(R.id.checkBox6);
+        check7 = rootView.findViewById(R.id.checkBox7);
+        check8 = rootView.findViewById(R.id.checkBox8);
+        check9 = rootView.findViewById(R.id.checkBox9);
+        check10 = rootView.findViewById(R.id.checkBox10);
+        check11 = rootView.findViewById(R.id.checkBox11);
+        check12 = rootView.findViewById(R.id.checkBox12);
+
+        CheckButton.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                Diag.setText(BoxesStatus());
+            }
+        });
+
+        return rootView;
     }
 }
