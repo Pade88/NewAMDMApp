@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    android:layout_height="wrap_content"
+    android:fillViewport="false">
 
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/CSVText"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="NOT IMPLEMENTED YET" />
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/CSVButton"
+        <TextView
+            android:id="@+id/textViewEU"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:gravity="center"
+            android:text="Top Europa dupa numarul total de cazuri"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart1"
+            android:layout_width="match_parent"
+            android:layout_height="710dp"
+            android:layout_above="@+id/seekBar1" />
+
+        <TextView
+            android:id="@+id/textViewASIA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Top Asia dupa numarul total de cazuri"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart2"
+            android:layout_width="match_parent"
+            android:layout_height="710dp"
+            android:layout_above="@+id/seekBar1" />
+
+        <TextView
+            android:id="@+id/textViewAMERICA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Top America dupa numarul total de cazuri"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart3"
+            android:layout_width="match_parent"
+            android:layout_height="710dp"
+            android:layout_above="@+id/seekBar1" />
+
+        <TextView
+            android:id="@+id/textViewAustr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Top Africa dupa numarul total de cazuri"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart4"
+            android:layout_width="match_parent"
+            android:layout_height="710dp"
+            android:layout_above="@+id/seekBar1" />
+
+        <TextView
+            android:id="@+id/textViewTopCazuri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Top 3 tari dupa numarul de cazuri"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart5"
+            android:layout_width="match_parent"
+            android:layout_height="710dp"
+            android:layout_above="@+id/seekBar1" />
+
+        <TextView
+            android:id="@+id/textViewTopDecese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Top 3 tari dupa numarul de decese"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart6"
+            android:layout_width="match_parent"
+            android:layout_height="710dp"
+            android:layout_above="@+id/seekBar1" />
+
+        <TextView
+            android:id="@+id/textViewTopCazuri24h"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Top 3 tari dupa numarul de cazuri in ultima zi"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart7"
+            android:layout_width="match_parent"
+            android:layout_height="710dp"
+            android:layout_above="@+id/seekBar1" />
     </LinearLayout>
-</FrameLayout>
+</ScrollView>
