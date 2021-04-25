@@ -7,11 +7,23 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import com.opencsv.CSVReader;
+
+import org.w3c.dom.Text;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -64,10 +76,52 @@ public class FirstFragment extends Fragment {
         }
     }
 
+    public List<CSVData> UploadData() throws IOException
+    {
+        List<CSVData> ListaTari = null;
+        InputStream input = getResources().openRawResource(R.raw.input);
+        BufferedReader reader = new BufferedReader( new InputStreamReader(input, Charset.forName("UTF-8")));
+        String line = "";
+        int lineCounter = 0;
+        try
+        {
+            while((line = reader.readLine()) != null )
+            {
+                if(lineCounter == 0)
+                {
+                    lineCounter++;
+                    continue;
+                }
+                else {
+                    CSVData tara = new CSVData(line.split(","));
+                    ListaTari.add(tara);
+                }
+                lineCounter++;
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        return ListaTari;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false);
+                             Bundle savedInstanceState)
+    {
+        View rootView = inflater.inflate(R.layout.fragment_first, container, false);
+        TextView CSVText = rootView.findViewById(R.id.CSVText);
+
+        try
+        {
+            List<CSVData> objectList = UploadData();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        return rootView;
     }
 }
