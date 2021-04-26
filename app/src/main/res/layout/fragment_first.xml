@@ -121,5 +121,39 @@
             android:layout_width="match_parent"
             android:layout_height="710dp"
             android:layout_above="@+id/seekBar1" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Introduceti o tara"
+            android:gravity="center"
+            android:textSize="20dp"/>
+
+        <EditText
+            android:id="@+id/editCountryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            />
+
+        <Button
+            android:id="@+id/buttonCautare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cauta" />
+
+        <TextView
+            android:id="@+id/textViewInfo"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:gravity="center"/>
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart8"
+            android:layout_width="match_parent"
+            android:layout_height="710dp"
+            android:layout_above="@+id/seekBar1" />
     </LinearLayout>
 </ScrollView>

@@ -4,16 +4,15 @@
 
     <item
         android:id="@+id/firstFragment"
-        android:title="Astazi"
-        android:icon="@drawable/day" />
-
+        android:icon="@drawable/stats"
+        android:title="Charturi" />
     <item
         android:id="@+id/secondFragment"
-        android:title="Charturi"
-        android:icon="@drawable/stats"/>
+        android:icon="@drawable/info"
+        android:title="Informatii" />
 
     <item
         android:id="@+id/thirdFragment"
-        android:title="Informatii"
-        android:icon="@drawable/info"/>
+        android:icon="@android:drawable/checkbox_on_background"
+        android:title="Test" />
 </menu>

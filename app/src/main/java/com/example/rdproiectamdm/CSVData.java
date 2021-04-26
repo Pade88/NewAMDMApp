@@ -48,4 +48,11 @@ public class CSVData
     public int getDecese() {return this.mortiTotal; }
 
     public int getCazuriUltimele24ore() {return this.cazuriUltimele24ore; }
+
+    public String getContinent () { return this.regiune; }
+
+    public float getCazuriPerMilion() {return this.cazuriPerMilion; }
+
+    public float getCazuri7zilePerMilion () { return this.cazuriUltimele7zilePerMilion; }
+
 }

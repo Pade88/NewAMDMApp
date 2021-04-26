@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +18,7 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -123,7 +126,44 @@ public class FirstFragment extends Fragment {
             }
         });
         counterThread.start();
+
+        Button btnCautare = rootView.findViewById(R.id.buttonCautare);
+        EditText txt = rootView.findViewById(R.id.editCountryName);
+
+
+        Vector<CSVData> finalObjectList = objectList;
+        btnCautare.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                DisplayInfos(rootView, finalObjectList, txt.getText().toString());
+                chart8.setData(generatePieDataIndividual(finalObjectList, txt.getText().toString()));
+                chart8.setUsePercentValues(true);
+            }
+        });
+
         return rootView;
+    }
+
+    public void DisplayInfos(View viewID, Vector<CSVData> function_input, String countryName)
+    {
+        TextView TWInfo = viewID.findViewById(R.id.textViewInfo);
+        for(CSVData country : function_input)
+        {
+            if (country.getNumeTara().equals(countryName))
+            {
+                TWInfo.setText(
+                        "Tara: " + country.getNumeTara() + "\n" +
+                        "Continent: " + country.getContinent() +  "\n" +
+                        "Cazuri totale: " + country.getCazuriTotale() +  "\n" +
+                        "Cazuri in ultimele 24 de ore: " + country.getCazuriUltimele24ore() + "\n" +
+                         "Cazuri pe milionul de locuitori: " + country.getCazuriPerMilion() + "\n" +
+                         "Incidenta in ultimele 7 zile per milion: " + country.getCazuri7zilePerMilion() + "\n" +
+                        "Decese totale: " + country.getDecese() + "\n"
+                );
+            }
+        }
     }
 
     public int getTotalCasesSum(Vector<CSVData> function_input)
@@ -147,6 +187,7 @@ public class FirstFragment extends Fragment {
     private PieChart chart5;
     private PieChart chart6;
     private PieChart chart7;
+    private PieChart chart8;
 
     public void initPieCharts(View viewID)
     {
@@ -158,6 +199,7 @@ public class FirstFragment extends Fragment {
         chart5 = viewID.findViewById(R.id.chart5); charts.add(chart5);
         chart6 = viewID.findViewById(R.id.chart6); charts.add(chart6);
         chart7 = viewID.findViewById(R.id.chart7); charts.add(chart7);
+        chart8 = viewID.findViewById(R.id.chart8); charts.add(chart8);
 
         for(PieChart current_chart : charts)
         {
@@ -173,6 +215,29 @@ public class FirstFragment extends Fragment {
         }
     }
 
+    protected  PieData generatePieDataIndividual(Vector<CSVData> function_input, String tara)
+    {
+        ArrayList<PieEntry> entries1 = new ArrayList<>();
+        for(CSVData object : function_input)
+        {
+            if(object.getNumeTara().equals(tara))
+            {
+                entries1.add(new PieEntry(object.getDecese(), "Decese totale (%)"));
+                entries1.add(new PieEntry(object.getCazuriTotale() - object.getDecese(), "Pacienti vindecati (%)"));
+            }
+        }
+
+        PieDataSet ds1 = new PieDataSet(entries1, "");
+        ds1.setColors(ColorTemplate.MATERIAL_COLORS);
+        ds1.setSliceSpace(1f);
+        ds1.setValueTextColor(Color.BLACK);
+        ds1.setValueTextSize(12f);
+
+        PieData d = new PieData(ds1);
+        d.setValueTypeface(tf);
+
+        return d;
+    }
 
     protected PieData generatePieDataContinent(Vector<CSVData> function_input, String continent, int counter)
     {
